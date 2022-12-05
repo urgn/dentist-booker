@@ -40,3 +40,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: ${{ steps.report.outputs.REPORT }}
+      - name: send report to telegram
+        uses: appleboy/telegram-action@master
+        if: failure()
+        with:
+          to: ${{ secrets.TELEGRAM_TO_2 }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: ${{ steps.report.outputs.REPORT }}
