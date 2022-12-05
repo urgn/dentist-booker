@@ -23,8 +23,8 @@ jobs:
         env:
           LUXMED_LOGIN: ${{ secrets.LUXMED_LOGIN }}
           LUXMED_PASSWORD: ${{ secrets.LUXMED_PASSWORD }}
-          LUXMED_LOGIN: ${{ secrets.LUXMED_LOGIN_KID }}
-          LUXMED_PASSWORD: ${{ secrets.LUXMED_PASSWORD_KID }}
+          LUXMED_LOGIN_KID: ${{ secrets.LUXMED_LOGIN_KID }}
+          LUXMED_PASSWORD_KID: ${{ secrets.LUXMED_PASSWORD_KID }}
         run: npx playwright test
       - name: Extract failed names
         if: failure()
@@ -39,4 +39,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ${{ steps.fruit.outputs.REPORT }}
+          message: ${{ steps.report.outputs.REPORT }}
