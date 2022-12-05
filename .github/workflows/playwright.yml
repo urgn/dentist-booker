@@ -23,10 +23,20 @@ jobs:
         env:
           LUXMED_LOGIN: ${{ secrets.LUXMED_LOGIN }}
           LUXMED_PASSWORD: ${{ secrets.LUXMED_PASSWORD }}
+          LUXMED_LOGIN: ${{ secrets.LUXMED_LOGIN_KID }}
+          LUXMED_PASSWORD: ${{ secrets.LUXMED_PASSWORD_KID }}
         run: npx playwright test
-      - uses: actions/upload-artifact@v3
-        if: always()
+      - name: Extract failed names
+        if: failure()
+        id: report
+        run: |
+          export REPORT=$(node -e 'console.log(require("./test-results.json").suites.map(suite => suite.specs[0]).filter(spec => !spec.ok).map(spec => spec.title).join(","))')
+          echo $REPORT
+          echo "::set-output name=REPORT::$REPORT"
+      - name: send report to telegram
+        uses: appleboy/telegram-action@master
+        if: failure()
         with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: ${{ steps.fruit.outputs.REPORT }}

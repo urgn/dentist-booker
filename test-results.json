@@ -1,0 +1,278 @@
+{
+  "config": {
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/urgn/code/urgn/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/urgn/code/urgn/luxmed-termins",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/urgn/code/urgn/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/urgn/code/urgn/luxmed-termins",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/urgn/code/urgn/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/urgn/code/urgn/luxmed-termins",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "configFile": "/Users/urgn/code/urgn/playwright.config.ts",
+    "rootDir": "/Users/urgn/code/urgn/luxmed-termins",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.28.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "dentist.spec.ts",
+      "file": "dentist.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "dentist",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 6308,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/x|0/\u001b[39m\nReceived string:  \u001b[31m\"1\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/x|0/\u001b[39m\nReceived string:  \u001b[31m\"1\"\u001b[39m\n    at /Users/urgn/code/urgn/luxmed-termins/dentist.spec.ts:23:7"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/urgn/code/urgn/luxmed-termins/dentist.spec.ts",
+                        "column": 7,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/x|0/\u001b[39m\nReceived string:  \u001b[31m\"1\"\u001b[39m\n\n\u001b[90m   at \u001b[39mdentist.spec.ts:23\n\n  21 |         .locator(`div:nth-child(${day}) > .card > .card-body > span`)\n  22 |         .textContent()\n> 23 |     ).toMatch(/x|0/);\n     |       ^\n  24 |   }\n  25 | });\n  26 |\n\n\u001b[2m    at /Users/urgn/code/urgn/luxmed-termins/dentist.spec.ts:23:7\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2022-12-05T21:17:29.044Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/Users/urgn/code/urgn/luxmed-termins/dentist.spec.ts",
+                    "column": 7,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "671ecd05b8db6bb0fa54-c6ee781548eac79adf59",
+          "file": "dentist.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "laryngolog.spec.ts",
+      "file": "laryngolog.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Fizjoterapeuta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 5907,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2022-12-05T21:17:35.650Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fb7cef415b97f77865ad-f81cba61f14813db05da",
+          "file": "laryngolog.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "neurolog.spec.ts",
+      "file": "neurolog.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Neurolog",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 5789,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2022-12-05T21:17:41.602Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e6e28fc84478f317eab-c172417c314062f6c2ba",
+          "file": "neurolog.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pediatra.spec.ts",
+      "file": "pediatra.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Pediatra",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 5999,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/x|0/\u001b[39m\nReceived string:  \u001b[31m\"1\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/x|0/\u001b[39m\nReceived string:  \u001b[31m\"1\"\u001b[39m\n    at /Users/urgn/code/urgn/luxmed-termins/pediatra.spec.ts:23:7"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/urgn/code/urgn/luxmed-termins/pediatra.spec.ts",
+                        "column": 7,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/x|0/\u001b[39m\nReceived string:  \u001b[31m\"1\"\u001b[39m\n\n\u001b[90m   at \u001b[39mpediatra.spec.ts:23\n\n  21 |         .locator(`div:nth-child(${day}) > .card > .card-body > span`)\n  22 |         .textContent()\n> 23 |     ).toMatch(/x|0/);\n     |       ^\n  24 |   }\n  25 | });\n  26 |\n\n\u001b[2m    at /Users/urgn/code/urgn/luxmed-termins/pediatra.spec.ts:23:7\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2022-12-05T21:17:47.395Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/Users/urgn/code/urgn/luxmed-termins/pediatra.spec.ts",
+                    "column": 7,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f59ce9238896f47eca41-20ca12766fce4ab85efd",
+          "file": "pediatra.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
