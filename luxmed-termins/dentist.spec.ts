@@ -16,7 +16,6 @@ test.skip("dentist", async ({ page }) => {
   await page
     .locator("#parent_4")
     .getByText("Higienistka stomatologiczna")
-    .nth(2)
     .click();
   await page.getByRole("button", { name: "Szukaj" }).click();
   for (let day = 1; day <= 14; day++) {
