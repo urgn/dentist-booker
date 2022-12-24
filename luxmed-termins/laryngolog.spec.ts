@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("Fizjoterapeuta", async ({ page }) => {
+test.skip("Fizjoterapeuta", async ({ page }) => {
   await page.goto("https://www.luxmed.pl/");
   await page.getByRole("button", { name: "Zaloguj" }).click();
   await page
