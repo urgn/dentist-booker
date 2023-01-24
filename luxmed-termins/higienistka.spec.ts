@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("Dentist", async ({ page }) => {
+test.skip("Higienistka", async ({ page }) => {
   await page.goto("https://www.luxmed.pl/");
   await page.getByRole("button", { name: "Zaloguj" }).click();
   await page
@@ -13,7 +13,10 @@ test("Dentist", async ({ page }) => {
   await page.getByRole("button", { name: "Umów usługę" }).click();
   await page.locator(".click-area").click();
   await page.getByText("Stomatologia").click();
-  await page.locator("#parent_4").getByText("Stomatolog").nth(2).click();
+  await page
+    .locator("#parent_4")
+    .getByText("Higienistka stomatologiczna")
+    .click();
   await page.getByRole("button", { name: "Szukaj" }).click();
   for (let day = 1; day <= 14; day++) {
     expect(
